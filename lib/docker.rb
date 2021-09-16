@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Docker関連の機能を纏めたモジュール
 class Docker
   @running_on_docker = File.exist?('/.dockerenv')

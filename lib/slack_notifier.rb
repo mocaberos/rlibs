@@ -1,6 +1,13 @@
+# frozen_string_literal: true
+
 # Slack通知クライアント
 class SlackNotifier
-  PREFIX = Rails.application.class.module_parent_name&.upcase || 'MOCA'
+  begin
+    PREFIX = Rails.application.class.module_parent_name&.upcase || 'MOCA'
+  rescue NameError
+    PREFIX = 'MOCA'
+  end
+
   attr_reader :client
 
   SLACK_WEBHOOK_URL     = ENV["#{PREFIX}_SLACK_WEBHOOK_URL"]
