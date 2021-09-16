@@ -1,0 +1,3 @@
+[submodule "vendor/tools"]
+	path = vendor/tools
+	url = https://github.com/mocaberos/tools.git
