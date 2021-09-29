@@ -3,15 +3,5 @@
 set -eu;
 
 cd `dirname ${0}`/..;
-
-gem install bundler:2.2.22;
-bundle exec rspec;
-bundle exec rubocop;
-
-# テストの終了
-echo -e "";
-echo -e "\n  =========================\n";
-echo -e "         TEST PASSED";
-echo -e "\n  =========================\n";
-echo -e "";
-exit 0;
+docker build -t mocaberos:mzk .;
+docker run --rm mocaberos:mzk sh -c ./docker/scripts/test.sh;

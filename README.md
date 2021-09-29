@@ -1,5 +1,8 @@
 # Ruby用ツールセット
 
+[![Build Status](https://codebuild.ap-northeast-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiekhCRy9vSkZhL3BSR1hCV0NvSkc3b3NMcm5MQnlnakkwVFZhWFI1bzZpTzZONmxMeFVLcjNKODhlQWo5ZGtFYmpLcjNQZVFqdzNVZTRBbFFJZ3h1NTNvPSIsIml2UGFyYW1ldGVyU3BlYyI6ImU4dXdib0NpOE1IbHJiYVQiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=main)](https://ap-northeast-1.console.aws.amazon.com/codesuite/codebuild/085041388644/projects/rlibs)
+[![codecov](https://codecov.io/gh/mocaberos/rlibs/branch/master/graph/badge.svg?token=L6SB5CH8KN)](https://codecov.io/gh/mocaberos/rlibs)
+
 ## インストール
 ```ruby
 gem 'moca_rlibs'

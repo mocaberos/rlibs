@@ -12,7 +12,6 @@ phases:
         # Run test.
         #
         set -eu;
-        setup;
         test;
   build:
     commands:
