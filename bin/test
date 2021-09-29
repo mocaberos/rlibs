@@ -4,6 +4,7 @@ set -eu;
 
 cd `dirname ${0}`/..;
 
+gem install bundler:2.2.22;
 bundle exec rspec;
 bundle exec rubocop;
 
