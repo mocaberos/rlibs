@@ -1,0 +1,35 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - export PATH=$PATH:$(pwd)/vendor/tools/codebuild
+      - export PATH=$PATH:$(pwd)/bin
+  pre_build:
+    commands:
+      - |
+        #
+        # Run test.
+        #
+        set -eu;
+        setup;
+        test;
+  build:
+    commands:
+      - |
+        #
+        # Push to RubyGems.
+        #
+        set -eu;
+        if trigger is release ?; then
+
+        fi;
+  post_build:
+    commands:
+      - |
+        #
+        # Notify the result.
+        #
+        set -eu;
+        notify-release-image rails-docker-image;
+        notify-build-result rails-docker-image;

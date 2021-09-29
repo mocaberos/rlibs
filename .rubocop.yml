@@ -1,1 +1,5 @@
-inherit_from: ./vendor/tools/config/.rubocop.yml
+inherit_from: ./vendor/tools/config/rubocop.yml
+
+# 文字列リテラルfrozen強制
+Style/FrozenStringLiteralComment:
+  Enabled: true
