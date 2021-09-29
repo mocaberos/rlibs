@@ -5,6 +5,7 @@ phases:
     commands:
       - export PATH=$PATH:$(pwd)/vendor/tools/codebuild
       - export PATH=$PATH:$(pwd)/bin
+      - docker-login
   pre_build:
     commands:
       - |
@@ -12,7 +13,11 @@ phases:
         # Run test.
         #
         set -eu;
-        test;
+        docker build -t mocaberos:mzk .;
+        docker run --rm \
+          -e CODECOV_TOKEN:"$CODECOV_TOKEN" \
+          mocaberos:mzk \
+          sh -c ./docker/scripts/test.sh;
   build:
     commands:
       - |

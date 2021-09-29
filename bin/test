@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-set -eu;
-
-cd `dirname ${0}`/..;
-docker build -t mocaberos:mzk .;
-docker run --rm mocaberos:mzk sh -c ./docker/scripts/test.sh;
