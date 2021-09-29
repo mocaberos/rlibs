@@ -22,7 +22,7 @@ phases:
         #
         set -eu;
         if trigger is release ?; then
-
+          push-to-rubygems moca_rlibs;
         fi;
   post_build:
     commands:
@@ -31,5 +31,5 @@ phases:
         # Notify the result.
         #
         set -eu;
-        notify-release-image rails-docker-image;
-        notify-build-result rails-docker-image;
+        notify-release-gem moca_rlibs;
+        notify-build-result moca_rlibs;
