@@ -14,7 +14,7 @@ phases:
         set -eu;
         docker build -t mocaberos:mzk .;
         docker run --rm \
-          -e CODECOV_TOKEN:$CODECOV_TOKEN \
+          -e CODECOV_TOKEN=$CODECOV_TOKEN \
           mocaberos:mzk \
           sh -c ./docker/scripts/test.sh;
   build:
