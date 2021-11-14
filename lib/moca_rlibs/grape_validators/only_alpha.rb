@@ -13,7 +13,7 @@ module MocaRlibs::GrapeValidators
       parameter = params[attr_name].presence.to_s
       return if parameter.match?(/\A[a-zA-Z]*\z/)
 
-      message = 'contain non-ascii characters'
+      message = 'contain invalid characters (only alphabets)'
       raise Grape::Exceptions::Validation.new(params: [@scope.full_name(attr_name)], message: message)
     end
   end
