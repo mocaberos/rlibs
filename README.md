@@ -112,6 +112,13 @@ params do
   requires :text, type: String, only_alpha_numeric: true
 end
 ```
+出力可能なアスキー文字しか含まれないこと
+(半角英数字、半角スペース、一部の表示可能な記号)
+```ruby
+params do
+  requires :text, type: String, only_printable: true
+end
+```
 ## Slack通知送信用クラス
 ```ruby
 # インスタンス化
