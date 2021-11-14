@@ -66,6 +66,8 @@ GEM
     rack (2.2.3)
     rack-accept (0.4.5)
       rack (>= 0.4)
+    rack-test (1.1.0)
+      rack (>= 1.0, < 3)
     rainbow (3.0.0)
     rake (13.0.6)
     regexp_parser (2.1.1)
@@ -124,6 +126,7 @@ DEPENDENCIES
   codecov
   moca_rlibs!
   rack
+  rack-test
   rake
   rspec
   rubocop
