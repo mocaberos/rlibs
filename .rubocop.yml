@@ -3,3 +3,19 @@ inherit_from: ./vendor/tools/config/rubocop.yml
 # 文字列リテラルfrozen強制
 Style/FrozenStringLiteralComment:
   Enabled: true
+
+# 制限を緩和
+CyclomaticComplexity:
+  Max: 16
+
+# spec用の一時的モジュール&クラス定義用
+Lint/ConstantDefinitionInBlock:
+  Exclude:
+    - 'spec/**/*'
+RSpec/LeakyConstantDeclaration:
+  Exclude:
+    - 'spec/**/*'
+
+# 誤作動があるため
+Rails/HttpPositionalArguments:
+  Enabled: false
