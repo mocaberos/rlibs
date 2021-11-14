@@ -84,4 +84,10 @@ RSpec.describe MocaRlibs::GrapeValidators::URL do
       end
     end
   end
+
+  context 'パラメータがnilの場合' do
+    it '204のステータスコードを返すこと' do
+      expect(subject).to eq(204)
+    end
+  end
 end
