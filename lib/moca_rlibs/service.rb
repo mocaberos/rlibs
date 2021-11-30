@@ -3,6 +3,8 @@
 module MocaRlibs
   # Rails用サービス層の導入
   class Service
+    self.abstract_class = true
+
     attr_reader :result
 
     def initialize(*_args, **_kwargs, &_block)

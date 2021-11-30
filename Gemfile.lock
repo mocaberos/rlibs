@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    moca_rlibs (0.0.5)
+    moca_rlibs (0.0.6)
       activemodel
       activerecord
       activesupport
