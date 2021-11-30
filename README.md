@@ -223,3 +223,9 @@ MocaRlibs::SlackNotifier.send('some message')
 # @param [String]        webhook  Web Hook URL
 MocaRlibs::SlackNotifier.error(StandardError.new('some error occurred'))
 ```
+
+## ruby拡張(Kernelモジュール)
+pythonのpassと同様、「何もしないこと」を明示的に示すため
+```ruby
+pass
+```
