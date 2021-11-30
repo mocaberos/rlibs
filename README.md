@@ -18,6 +18,59 @@ MocaRlibs::Docker.running_on_docker?
 MocaRlibs::CodeBuild.running_on_codebuild?
 ```
 
+## ActiveModelカスタムバリデーション
+半角アルファベットのみを許可する
+```ruby
+class UserModel
+  include ActiveModel::Validations
+
+  validates :user_name, only_alpha: true
+end
+```
+半角アルファベットと数字のみを許可する
+```ruby
+class UserModel
+  include ActiveModel::Validations
+
+  validates :user_name, only_alpha_numeric: true
+end
+```
+数字のみの文字列を許可する
+```ruby
+class UserModel
+  include ActiveModel::Validations
+
+  validates :user_name, only_numbers: true
+end
+```
+アスキー文字のみの文字列を許可する
+```ruby
+class UserModel
+  include ActiveModel::Validations
+
+  validates :user_name, only_ascii: true
+end
+```
+出力可能なアスキー文字のみかどうかをチェックする(半角英数字、一部の記号)
+```ruby
+class UserModel
+  include ActiveModel::Validations
+
+  validates :user_name, only_printable: true
+end
+```
+メールアドレスのフォーマットチェック
+https://github.com/K-and-R/email_validator
+```ruby
+class UserModel
+  include ActiveModel::Validations
+
+  validates :user_email, email: true
+  validates :user_email, email: {mode: :strict, require_fqdn: true}
+  validates :user_email, email: {domain: 'example.com'}
+end
+```
+
 ## Grapeカスタムバリデーション
 メールアドレスのフォーマットチェック(簡易チェック)
 ```ruby
@@ -112,8 +165,7 @@ params do
   requires :text, type: String, only_alpha_numeric: true
 end
 ```
-出力可能なアスキー文字しか含まれないこと
-(半角英数字、半角スペース、一部の表示可能な記号)
+出力可能なアスキー文字しか含まれないこと(半角英数字、一部の表示可能な記号)
 ```ruby
 params do
   requires :text, type: String, only_printable: true

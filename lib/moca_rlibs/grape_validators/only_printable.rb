@@ -4,7 +4,7 @@ require 'active_support/all'
 require 'grape'
 
 module MocaRlibs::GrapeValidators
-  # 出力可能なアスキー文字のみかどうかをチェックする(半角英数字+半角スペース+一部の記号)
+  # 出力可能なアスキー文字のみかどうかをチェックする(半角英数字+一部の記号)
   class OnlyPrintable < Grape::Validations::Base
     def validate_param!(attr_name, params)
       return if !@required && params[attr_name].blank?

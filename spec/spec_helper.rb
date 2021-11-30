@@ -3,7 +3,17 @@
 require 'simplecov'
 require 'codecov'
 require 'rack/test'
+require 'sqlite3'
+require 'active_record'
+require 'active_record/base'
+require 'active_record/migration'
 require 'moca_rlibs'
+
+ActiveRecord::Migration.verbose = false
+ActiveRecord::Base.establish_connection(
+  'adapter'  => 'sqlite3',
+  'database' => ':memory:'
+)
 
 RSpec.configure do |config|
   config.include Rack::Test::Methods

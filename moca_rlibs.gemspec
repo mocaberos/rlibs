@@ -28,6 +28,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_dependency 'activemodel'
+  spec.add_dependency 'activerecord'
   spec.add_dependency 'activesupport'
   spec.add_dependency 'email_validator'
   spec.add_dependency 'grape'
@@ -43,4 +44,9 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rubocop-rails'
   spec.add_development_dependency 'rubocop-rspec'
   spec.add_development_dependency 'simplecov'
+  spec.add_development_dependency 'sqlite3'
+
+  spec.metadata = {
+    'rubygems_mfa_required' => 'true'
+  }
 end
