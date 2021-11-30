@@ -39,6 +39,8 @@ require_relative 'moca_rlibs/active_model_validators/only_numbers'
 require_relative 'moca_rlibs/active_model_validators/only_printable'
 require_relative 'moca_rlibs/active_model_validators/ip'
 
+require_relative 'moca_rlibs/kernel'
+
 require 'active_model'
 require 'email_validator'
 
