@@ -16,18 +16,6 @@ RSpec.describe ActiveModel::Validations::OnlyNumbersValidator do
     OnlyNumbersUserModel.new
   end
 
-  before :each do
-    ActiveRecord::Schema.define(version: 1) do
-      create_table :users, force: true do |t|
-        t.string :user_name, null: true
-      end
-    end
-  end
-
-  after :each do
-    ActiveRecord::Base.connection.drop_table(:users)
-  end
-
   context '値がnilの場合' do
     it 'バリデーションが通ること' do
       user.user_name = nil

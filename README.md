@@ -66,8 +66,18 @@ class UserModel
   include ActiveModel::Validations
 
   validates :user_email, email: true
-  validates :user_email, email: {mode: :strict, require_fqdn: true}
-  validates :user_email, email: {domain: 'example.com'}
+  validates :user_email, email: { mode: :strict, require_fqdn: true }
+  validates :user_email, email: { domain: 'example.com' }
+end
+```
+IPアドレスのフォーマットをチェックする
+```ruby
+class UserModel
+  include ActiveModel::Validations
+
+  validates :last_login_ip, ip: true
+  validates :last_login_ip, ip: { version: :v4 }
+  validates :last_login_ip, ip: { version: :v6 }
 end
 ```
 
@@ -171,6 +181,15 @@ params do
   requires :text, type: String, only_printable: true
 end
 ```
+IPアドレスのフォーマットをチェックする
+```ruby
+params do
+  optional :ip,   type: String, ip_address: true
+  optional :ipv4, type: String, ip_address: :v4
+  optional :ipv6, type: String, ip_address: :v6
+end
+```
+
 ## Slack通知送信用クラス
 ```ruby
 # インスタンス化
