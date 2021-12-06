@@ -15,3 +15,7 @@ Lint/ConstantDefinitionInBlock:
 RSpec/LeakyConstantDeclaration:
   Exclude:
     - 'spec/**/*'
+
+# 誤作動があるため
+Rails/HttpPositionalArguments:
+  Enabled: false
