@@ -22,7 +22,7 @@ module ActiveModel::Validations
       return if options[:version].include?(:v4) && ::Resolv::IPv4::Regex.match?(value)
       return if options[:version].include?(:v6) && ::Resolv::IPv6::Regex.match?(value)
 
-      record.errors[attribute] << 'invalid ip format'
+      record.errors.add('invalid ip format')
     end
   end
 end

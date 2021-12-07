@@ -12,7 +12,7 @@ module ActiveModel::Validations
       value = value.presence.to_s
       return if value.match?(%r{\A[a-zA-Z0-9!"#$%&'()*+,-./:;<=>?@\[\\\]^_`{|}~]*\z})
 
-      record.errors[attribute] << 'contain invalid characters (only printable ascii characters)'
+      record.errors.add('contain invalid characters (only printable ascii characters)')
     end
   end
 end

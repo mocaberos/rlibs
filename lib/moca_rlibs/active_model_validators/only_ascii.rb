@@ -12,7 +12,7 @@ module ActiveModel::Validations
       value = value.presence.to_s
       return if value.match?(/\A[\u0000-\u007F]*\z/)
 
-      record.errors[attribute] << 'contain non-ascii characters'
+      record.errors.add('contain non-ascii characters')
     end
   end
 end
