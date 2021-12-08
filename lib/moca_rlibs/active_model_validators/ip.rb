@@ -15,7 +15,7 @@ module ActiveModel::Validations
       super
     end
 
-    def validate_each(record, attribute, value)
+    def validate_each(record, _attribute, value)
       return if value.blank?
 
       value = value.presence.to_s
