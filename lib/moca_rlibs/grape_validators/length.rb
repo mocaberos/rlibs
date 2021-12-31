@@ -7,7 +7,7 @@ require 'grape'
 
 module MocaRlibs::GrapeValidators
   # 文字列の長さチェック
-  class Length < Grape::Validations::Base
+  class Length < Grape::Validations::Validators::Base
     def validate_param!(attr_name, params)
       return if !@required && params[attr_name].blank?
 

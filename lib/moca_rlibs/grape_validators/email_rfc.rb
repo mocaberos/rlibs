@@ -7,7 +7,7 @@ require 'email_validator'
 
 module MocaRlibs::GrapeValidators
   # メールアドレスのフォーマットチェック(RFC-2822, RFC-5321)
-  class EmailRFC < Grape::Validations::Base
+  class EmailRFC < Grape::Validations::Validators::Base
     def validate_param!(attr_name, params)
       return if !@required && params[attr_name].blank?
 

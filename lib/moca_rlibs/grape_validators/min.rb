@@ -7,7 +7,7 @@ require 'grape'
 
 module MocaRlibs::GrapeValidators
   # 数値の最小値をチェック
-  class Min < Grape::Validations::Base
+  class Min < Grape::Validations::Validators::Base
     def validate_param!(attr_name, params)
       return if !@required && params[attr_name].blank?
 

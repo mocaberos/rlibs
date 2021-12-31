@@ -7,7 +7,7 @@ require 'grape'
 
 module MocaRlibs::GrapeValidators
   # 数値の最大値をチェック
-  class Max < Grape::Validations::Base
+  class Max < Grape::Validations::Validators::Base
     def validate_param!(attr_name, params)
       return if !@required && params[attr_name].blank?
 

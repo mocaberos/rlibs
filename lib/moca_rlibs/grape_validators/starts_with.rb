@@ -7,7 +7,7 @@ require 'grape'
 
 module MocaRlibs::GrapeValidators
   # 文字列の先頭をチェック
-  class StartsWith < Grape::Validations::Base
+  class StartsWith < Grape::Validations::Validators::Base
     def validate_param!(attr_name, params)
       return if !@required && params[attr_name].blank?
 

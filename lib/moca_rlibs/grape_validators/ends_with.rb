@@ -7,7 +7,7 @@ require 'grape'
 
 module MocaRlibs::GrapeValidators
   # 文字列の末尾をチェック
-  class EndsWith < Grape::Validations::Base
+  class EndsWith < Grape::Validations::Validators::Base
     def validate_param!(attr_name, params)
       return if !@required && params[attr_name].blank?
 

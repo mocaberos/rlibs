@@ -5,7 +5,7 @@ require 'grape'
 
 module MocaRlibs::GrapeValidators
   # アスキー文字のみを許可する
-  class OnlyASCII < Grape::Validations::Base
+  class OnlyASCII < Grape::Validations::Validators::Base
     def validate_param!(attr_name, params)
       return if !@required && params[attr_name].blank?
 

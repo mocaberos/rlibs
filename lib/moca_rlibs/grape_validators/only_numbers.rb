@@ -5,7 +5,7 @@ require 'grape'
 
 module MocaRlibs::GrapeValidators
   # 文字列が数字のみであることをチェックする
-  class OnlyNumbers < Grape::Validations::Base
+  class OnlyNumbers < Grape::Validations::Validators::Base
     def validate_param!(attr_name, params)
       return if !@required && params[attr_name].blank?
 

@@ -5,7 +5,7 @@ require 'grape'
 
 module MocaRlibs::GrapeValidators
   # URLとして正しいフォーマットかどうかをチェックする
-  class URL < Grape::Validations::Base
+  class URL < Grape::Validations::Validators::Base
     def validate_param!(attr_name, params)
       return if !@required && params[attr_name].blank?
 

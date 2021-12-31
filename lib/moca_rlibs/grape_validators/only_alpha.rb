@@ -5,7 +5,7 @@ require 'grape'
 
 module MocaRlibs::GrapeValidators
   # 文字列が半角アルファベットのみであることをチェックする
-  class OnlyAlpha < Grape::Validations::Base
+  class OnlyAlpha < Grape::Validations::Validators::Base
     def validate_param!(attr_name, params)
       return if !@required && params[attr_name].blank?
 

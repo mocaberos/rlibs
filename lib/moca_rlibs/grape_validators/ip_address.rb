@@ -6,7 +6,7 @@ require 'resolv'
 
 module MocaRlibs::GrapeValidators
   # 数値の最小値をチェック
-  class IpAddress < Grape::Validations::Base
+  class IpAddress < Grape::Validations::Validators::Base
     def validate_param!(attr_name, params)
       return if !@required && params[attr_name].blank?
 

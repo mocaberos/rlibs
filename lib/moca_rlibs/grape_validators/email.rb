@@ -5,7 +5,7 @@ require 'grape'
 
 module MocaRlibs::GrapeValidators
   # メールアドレスのフォーマットチェック(簡易的なチェック)
-  class Email < Grape::Validations::Base
+  class Email < Grape::Validations::Validators::Base
     def validate_param!(attr_name, params)
       return if !@required && params[attr_name].blank?
 
